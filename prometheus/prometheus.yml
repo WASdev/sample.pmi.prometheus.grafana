@@ -11,6 +11,6 @@ scrape_configs:
   - job_name: 'was-nd'
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: ['twas:9080']
