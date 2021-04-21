@@ -30,7 +30,7 @@ The latest version of WebSphere Application Server traditional 9.0.5 will be ins
 
 ### Prometheus
 
-The configuration for Prometheus is done via a file called [prometheus.yml](prometheus/prometheus.yml), which tells it where to scrape the metrics from and how long the interval should be between each scrape. The following prometheus configuration is set for this sample, where the `scrape_configs` section has one job called `was_nd`. In this job, prometheus is configured to scrape the `twas:9080/metrics` endpoint every 5 seconds, which is from the running `twas_metrics` container.
+The configuration for Prometheus is done via a file called [prometheus.yml](prometheus/prometheus.yml), which tells it where to scrape the metrics from and how long the interval should be between each scrape. The following prometheus configuration is set for this sample, where the `scrape_configs` section has one job called `was_nd`. In this job, prometheus is configured to scrape the `twas:9080/metrics` endpoint every 15 seconds, which is from the running `twas_metrics` container.
 
 prometheus.yml
 ```
@@ -47,7 +47,7 @@ scrape_configs:
   - job_name: 'was-nd'
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-    scrape_interval: 5s
+    scrape_interval: 15s
     static_configs:
       - targets: ['twas:9080']
 ```
